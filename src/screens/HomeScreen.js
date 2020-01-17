@@ -1,33 +1,35 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import AsyncStorage from '@react-native-community/async-storage';
+import { ScrollView } from 'react-native-gesture-handler';
 
 class HomeScreen extends Component {
 
     constructor(props) {
         super(props)
     }
-    onPressAsync = async() => {
+    onPressAsync = async () => {
         let data = {
             name: 'abc',
             city: 'xyz'
         }
-        await AsyncStorage.setItem('MyKey',JSON.stringify(data));
+        await AsyncStorage.setItem('MyKey', JSON.stringify(data));
         let asyncData = await AsyncStorage.getItem('MyKey');
-        console.log('Data',asyncData);
+        console.log('Data', asyncData);
     }
     render() {
         return (
             <View style={styles.container}>
+                <ScrollView>
                 <View style={styles.dashboardstyle}>
                     <TouchableOpacity onPress={() => this.props.navigation.navigate('Dashboard')}>
-                        <Text style={{color:'#fff'}}>{'Go To Dashboard'}</Text>
+                        <Text style={{ color: '#fff' }}>{'Go To Dashboard'}</Text>
                     </TouchableOpacity>
                 </View>
 
                 <View style={styles.listscreenstyle}>
                     <TouchableOpacity onPress={() => this.props.navigation.navigate('ListScreen')}>
-                        <Text style={{color:'#fff'}}>{'Go To ListScreen'}</Text>
+                        <Text style={{ color: '#fff' }}>{'Go To ListScreen'}</Text>
                     </TouchableOpacity>
 
 
@@ -44,7 +46,7 @@ class HomeScreen extends Component {
                 <View style={styles.spacedemoscreenstyle}>
                     <TouchableOpacity style={styles.spacedescreenstyle}
                         onPress={() => this.props.navigation.navigate('SpaceDemoScreen')}>
-                        <Text style={{color:'#fff'}}>{'Go To SpaceDemoScreen'}</Text>
+                        <Text style={{ color: '#fff' }}>{'Go To SpaceDemoScreen'}</Text>
                     </TouchableOpacity>
                 </View>
 
@@ -61,24 +63,49 @@ class HomeScreen extends Component {
                         <Text>{'Go To ValidationDemoScreen'}</Text>
                     </TouchableOpacity>
                 </View>
-                
+
                 <View style={styles.demolayoutscreenstyle}>
                     <TouchableOpacity style={styles.spcreenstyle}
                         onPress={() => this.props.navigation.navigate('DemoLayoutScreen')}>
-                        <Text style={{color:'#fff'}}>{'Go To DemoLayoutScreen'}</Text>
+                        <Text style={{ color: '#fff' }}>{'Go To DemoLayoutScreen'}</Text>
                     </TouchableOpacity>
                 </View>
                 <View>
-                    <TouchableOpacity style = {styles.dashboardstyle} onPress = {() => this.props.navigation.navigate('PanResponder')}>
+                    <TouchableOpacity style={styles.dashboardstyle} onPress={() =>
+                        this.props.navigation.navigate('PanResponder')}>
                         <Text style={styles.textStyle}>{'PanResponder'}</Text>
                     </TouchableOpacity>
                 </View>
                 <View>
-                    <TouchableOpacity style = {styles.dashboardstyle} onPress = {() => this.onPressAsync()}>
+                    <TouchableOpacity style={styles.listscreenstyle} onPress={() =>
+                        this.onPressAsync()}>
                         <Text style={styles.textStyle}>{'AsyncStorageDemo'}</Text>
                     </TouchableOpacity>
                 </View>
 
+                <View>
+                    <TouchableOpacity style={styles.imagetouchablescreenstyle} onPress={() =>
+                        this.props.navigation.navigate('ListLayoutScreen')}>
+                        <Text style={{color:'#000'}}>{'ListLayoutScreen'}</Text>
+                    </TouchableOpacity>
+                </View>
+
+                <View>
+                    <TouchableOpacity style={styles.spacedemoscreenstyle} onPress={() =>
+                        this.props.navigation.navigate('ChessBoard')}>
+                        <Text style={styles.textStyle}>{'ChessBoard'}</Text>
+                    </TouchableOpacity>
+                </View>
+
+                {/* <View>
+                    <TouchableOpacity style={styles.dashboardstyle} onPress={() =>
+                        this.props.navigation.navigate('ChessBoard')}>
+                        <Text style={styles.textStyle}>{'ChessBoard'}</Text>
+                    </TouchableOpacity>
+                </View> */}
+               
+
+                </ScrollView>
             </View>
 
 
@@ -93,61 +120,64 @@ const styles = StyleSheet.create({
         backgroundColor: '#ccc',
         flex: 1,
     },
-    dashboardstyle:{
+    textStyle:{
+        color:'#fff',
+    },
+    dashboardstyle: {
         alignItems: 'center',
         marginTop: 20,
         backgroundColor: 'red',
         padding: 15,
-        borderRadius:25,
-        marginHorizontal:30
+        borderRadius: 25,
+        marginHorizontal: 30
     },
     listscreenstyle: {
         alignItems: 'center',
         marginTop: 20,
         backgroundColor: 'green',
         padding: 15,
-        borderRadius:25,
-        marginHorizontal:30
+        borderRadius: 25,
+        marginHorizontal: 30
     },
     imagetouchablescreenstyle: {
         alignItems: 'center',
         marginTop: 20,
         backgroundColor: 'yellow',
         padding: 15,
-        borderRadius:25,
-        marginHorizontal:30
+        borderRadius: 25,
+        marginHorizontal: 30
     },
     spacedemoscreenstyle: {
         alignItems: 'center',
         marginTop: 20,
         backgroundColor: 'blue',
         padding: 15,
-        borderRadius:25,
-        marginHorizontal:30
+        borderRadius: 25,
+        marginHorizontal: 30
     },
-    spacescreenstyle:{
+    spacescreenstyle: {
         alignItems: 'center',
         marginTop: 20,
         backgroundColor: 'skyblue',
         padding: 15,
-        borderRadius:25,
-        marginHorizontal:30
+        borderRadius: 25,
+        marginHorizontal: 30
     },
-    validationdemoscreenstyle:{
+    validationdemoscreenstyle: {
         alignItems: 'center',
         marginTop: 20,
         backgroundColor: 'pink',
         padding: 15,
-        borderRadius:25,
-        marginHorizontal:30
+        borderRadius: 25,
+        marginHorizontal: 30
     },
-    demolayoutscreenstyle:{
+    demolayoutscreenstyle: {
         alignItems: 'center',
         marginTop: 20,
         backgroundColor: '#FF5733',
         padding: 15,
-        borderRadius:25,
-        marginHorizontal:30
+        borderRadius: 25,
+        marginHorizontal: 30
     }
 
 });

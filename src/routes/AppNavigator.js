@@ -9,6 +9,8 @@ import SpaceScreen from '../screens/SpaceScreen';
 import ValidationDemoScreen from '../screens/ValidationDemoScreen';
 import DemoLayoutScreen from '../screens/DemoLayoutScreen';
 import PanResponderDemo from '../screens/PanResponderDemo';
+import ListLayoutScreen from '../screens/ListLayoutScreen';
+import ChessBoard from '../screens/ChessBoard';
 
 const AuthStack = createStackNavigator({
     HomeScreen: {screen: HomeScreen},
@@ -20,7 +22,9 @@ const AuthStack = createStackNavigator({
     ValidationDemoScreen:{screen:ValidationDemoScreen},
     DemoLayoutScreen:{screen:DemoLayoutScreen},
     PanResponder:{screen:PanResponderDemo},
-}, {headerMode: 'none'});
+    ListLayoutScreen:{screen:ListLayoutScreen},
+    ChessBoard:{screen:ChessBoard}
+   }, {headerMode: 'none'});
 
 const AppNavigator = createAppContainer(AuthStack);
 
