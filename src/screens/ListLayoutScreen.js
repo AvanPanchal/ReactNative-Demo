@@ -17,7 +17,7 @@ class ListLayoutScreen extends Component {
                 color: '#fcb502',
                 desc: 'Loren Ipsum dolor sit amet,',
                 descone: 'vis  no  erroribus hendrerit,',
-                icon: require('../images/tooth-logo-template-for-dentistry-or-dental-vector-13450850.jpg'),
+                icon: require('../images/tooth_logo.jpg'),
             },
             {
                 id: 2,
@@ -62,7 +62,7 @@ class ListLayoutScreen extends Component {
                                     <Text style={styles.editstyle}>Edit</Text>
                                 </View>
                                 <View >
-                                    <Image source={require('../images/arrow-down-sign-to-navigate.png')}
+                                    <Image source={require('../images/arrow_down.png')}
                                         style={{ height: 18, width: 18, marginLeft: 10 }}></Image>
                                 </View>
                             </View>

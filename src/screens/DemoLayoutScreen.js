@@ -11,7 +11,7 @@ class DemoLayoutScreen extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <ScrollView vertical={true} style={{paddingHorizontal: 30}}>
+                <ScrollView vertical={true} style={{ paddingHorizontal: 30 }}>
                     <View style={styles.containerone}>
                         <Text style={styles.headerstyle}>Online Doctor Specialities</Text>
                     </View>
@@ -28,7 +28,7 @@ class DemoLayoutScreen extends Component {
                                         <Text style={styles.editstyle}>Edit</Text>
                                     </View>
                                     <View >
-                                        <Image source={require('../images/arrow-down-sign-to-navigate.png')}
+                                        <Image source={require('../images/arrow_down.png')}
                                             style={{ height: 18, width: 18, marginLeft: 10 }}></Image>
                                     </View>
                                 </View>
@@ -41,7 +41,7 @@ class DemoLayoutScreen extends Component {
                         <View style={{ marginTop: 20 }}>
                             <Image
                                 style={{ width: 100, height: 100, borderRadius: 25 }}
-                                source={require('../images/tooth-logo-template-for-dentistry-or-dental-vector-13450850.jpg')}
+                                source={require('../images/tooth_logo.jpg')}
                             />
                         </View>
                         <View style={{ marginTop: 25 }}>
@@ -130,13 +130,13 @@ class DemoLayoutScreen extends Component {
                         </View>
                     </View>
                     <TouchableOpacity style={{
-                            alignItems: 'center', backgroundColor: 'yellow',
-                            padding: 25, borderRadius: 25, marginHorizontal: 30,marginTop:25
-                        }} onPress={() => this.props.navigation.goBack()}>
-                            <Text>{'Go To HomeScreen'}</Text>
+                        alignItems: 'center', backgroundColor: 'yellow',
+                        padding: 25, borderRadius: 25, marginHorizontal: 30, marginTop: 25
+                    }} onPress={() => this.props.navigation.goBack()}>
+                        <Text>{'Go To HomeScreen'}</Text>
                     </TouchableOpacity>
 
-            
+
                 </ScrollView>
             </View>
         );
